@@ -13,11 +13,12 @@ window.addEventListener("load", () => {
         }
 
         callApi(input.value);
-
+        clearInput();
         
     });
 
 
+    //LLAMADA A API
     function callApi(city){
         const apiId = "979b1d446d89ad67253bc2bd3051c9d6";
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiId}`;
@@ -25,7 +26,6 @@ window.addEventListener("load", () => {
         fetch(url)
             .then(response => response.json())
             .then (response => {
-                //console.log(response);
 
                 if(response.cod == "404"){
                     showError("Ciudad no encontrada");
@@ -40,6 +40,7 @@ window.addEventListener("load", () => {
     }
 
 
+    //CREA EL HTML
     function showWeather(data){
         const {name, main:{temp, temp_min, temp_max}, weather:[arr]} = data;
         let degrees = convertDegrees(temp);
@@ -63,27 +64,34 @@ window.addEventListener("load", () => {
                         </div>
                     </div>
         `;
-        console.log(name);
-        console.log(temp);
-        console.log(temp_max);
-        console.log(temp_min);
-        console.log(arr.icon);
+        // console.log(name);
+        // console.log(temp);
+        // console.log(temp_max);
+        // console.log(temp_min);
+        // console.log(arr.icon);
 
 
 
     }
 
-    //UBICACION VACIA
+    //ERROR UBICACION VACIA
     function showError(message){
         alert(message);
     }
 
+    //CONVERTIR A GRADOS CELSIUS
     function convertDegrees(temp){
         return parseInt(temp - 273.15);
     }
 
+    //LIMPIER EL HTML PARA UNA NUEVA CONSULTA
     function clearHtml(){
         containerWeather.innerHTML = "";
+    }
+
+    //LIMPIAR EL INPUT AL HACER UNA BUSQUEDA
+    function clearInput(){
+        input.value = "";
     }
 
 });

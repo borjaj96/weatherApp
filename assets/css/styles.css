@@ -6,19 +6,16 @@ body{
     font-family: Montserrat;
     font-size: 1.6rem;
     background-image: url(../img/rainWallpaper.jpg);
-    background-size: cover; /* Hace que la imagen cubra todo el fondo */
-    background-position: center center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    height: 100vh; /* Asegura que el body tenga al menos el tamaño de la ventana */
-    margin: 0; /* Elimina el margen predeterminado del body */
-
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    margin: 0; 
     color: white;
-
 }
 
 .layout{
     width: 100%;
-    min-height: 100%;
+    height: 100%;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -86,7 +83,6 @@ body{
 
 .container__weather{
     margin-top: 4rem;
-    
 }
 
 .weather__location{
@@ -108,8 +104,6 @@ body{
 }
 
 .top__condition{
-    /* font-size: 18rem;
-    padding: 5rem; */
     width: 27rem;
 }
 
@@ -124,3 +118,43 @@ body{
     font-size: 2rem;
     font-weight: 600;
 }
+
+
+@media (max-width: 767px) {
+    html, body {
+      height: 100%; 
+      overflow: hidden; 
+      width: 39rem;
+    }
+  
+    body {
+        background-image: url(../img/phoneWallpaper.jpg);
+        background-size: cover; 
+        background-position: center center; 
+        background-attachment: fixed; 
+        height: 100vh;  
+    }
+
+
+    .main__container{
+        width: 39rem;
+    }
+
+    .top__condition {
+        width: 17rem;
+        height: 17rem;
+    }
+
+    .top__temperature {
+        font-size: 13rem;
+    }
+
+    .info__top{
+        margin-top: 4rem;
+    }
+
+    .info__bottom{
+        gap: 0;
+        margin-top: 4rem;
+    }
+  }
