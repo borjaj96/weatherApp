@@ -1,0 +1,126 @@
+html{
+    font-size: 10px;
+}
+
+body{
+    font-family: Montserrat;
+    font-size: 1.6rem;
+    background-image: url(../img/rainWallpaper.jpg);
+    background-size: cover; /* Hace que la imagen cubra todo el fondo */
+    background-position: center center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    height: 100vh; /* Asegura que el body tenga al menos el tamaño de la ventana */
+    margin: 0; /* Elimina el margen predeterminado del body */
+
+    color: white;
+
+}
+
+.layout{
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.layout__main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__container{
+    background-color: rgba(8, 8, 8, 0.603);    
+    width: 80rem;
+    height: 60rem;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.container__search{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4rem;
+}
+
+.search__input{
+    width: 30rem;
+    height: 4rem;
+    border: none;
+    outline: none;
+    border-radius: 50px 0 0 50px;
+    color: black;
+    text-align: center;
+}
+
+.search__button{
+    width: 3rem;
+    height: 4rem;
+    border: none;
+    outline: none;
+    border-radius: 0 50px 50px 0;
+    background-color: white;
+    cursor: pointer;
+    color: black;
+    transition: all 300ms ease-in-out;
+}
+
+.button__search{
+    color: black;
+    transition: all 300ms ease-in-out;
+}
+
+.button__search:hover{
+    color: rgb(0, 119, 255);
+}
+
+
+/* ===================== */
+
+.container__weather{
+    margin-top: 4rem;
+    
+}
+
+.weather__location{
+    text-align: center;
+    font-weight: 600;
+    font-size: 5rem;
+}
+
+.weather__info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info__top{
+    gap: 2rem;
+    display: flex;
+}
+
+.top__condition{
+    /* font-size: 18rem;
+    padding: 5rem; */
+    width: 27rem;
+}
+
+.top__temperature{
+    font-size: 18rem;
+}
+
+.info__bottom{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
